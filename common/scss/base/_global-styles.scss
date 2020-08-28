@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	color: $base-text-color;
+}
+.error { color: $error-color; }
+.warning { color: $warning-color; }
+
+a {
+    color: $link-color;
+	&:visited {
+    	color: $link-color-visited;
+	}
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+	/*****************External open in a new window*******/
+	&.external::after {
+	  background: url('../../theme/RFTP/gray_theme/icon_external_link_g.svg');
+	  background-size: contain;
+	  background-repeat: no-repeat;
+	  width: 15px;
+	  height: 15px;
+	  content: '';
+	  display: inline-block;
+	  margin-left: 3px;
+	}
+}
+
+.tgl-panel a.external::after {
+	@extend a.external::after;
+	background: url('../../theme/RFTP/gray_theme/icon_external_link_g.svg')!important;
+	background-size: contain!important;
+	background-repeat: no-repeat!important;
+}
+.download-icon {
+	background: url(../../theme/base/icon_download.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 35px;
+	height: 28px;
+	content: '';
+	position: absolute;
+	right: 5%;
+	margin-top: 10px;
+	z-index: 5;
+	@include hide-text;
+	&:hover {
+		background-position: 0px -28px;
+	}
+}
+
+.disabled, .locked, .module-is-locked, .module-is-locked a {
+	cursor: not-allowed !important;
+}
+
+.disabled, .locked, .module-is-locked, .module-is-locked a {
+	cursor: not-allowed !important;
+}
+
+//WET override
+.btn-default {
+    color: $button-default-color;
+    background-color: $button-default-background-color;
+    border-color: $button-default-border-color;
+    &:hover {
+    	color: $button-default-color-hover;
+    	background-color: $button-default-background-color-hover;
+    	border-color: $button-default-border-color-hover;
+    }
+}

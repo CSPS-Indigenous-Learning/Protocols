@@ -1,0 +1,74 @@
+#map_origin {
+  padding-left: 0;
+}
+
+.mod-index {
+  margin-top: 25px;
+  > h2 {
+    margin-top: 35px;
+    margin-left: 30px;
+  }
+  h3, h4, h5 {
+    margin: 5px 0px 5px 0px;
+    font-size: 1em;
+  }
+}
+body > #sitemap_pop {
+  //make sure to hide the popper
+  //this will only be outputed in the html for conveniance
+  //it will NOT be used for display
+  display: none;
+}
+#sitemap_pop > .modal-body {
+  h3, h4, h5 {
+    margin: 5px 0px 5px 0px;
+    font-size: 1em;
+  }
+}
+
+.mod-index ul > li, #sitemap_pop > .modal-body ul > li, .steps ul > li {
+  margin: 1px 0px;
+  list-style: none;
+  /*height:25px;*/
+  /*list-style:url(../../theme/base/sitemap_bullet.png);*/
+}
+
+.mod-index ul > li.sub-page, #sitemap_pop > .modal-body ul > li.sub-page, .index-list {
+  padding-left: 30px;
+}
+
+.sub-page {
+  height: 22px;
+}
+
+.checkmark-viewed {
+  font-weight: normal;
+  display: inline-block;
+  float: right;
+  padding: 0px 8px;
+  color: $sitemap-checkmark-color;
+  background-color: $sitemap-checkmark-background-color;
+  &:before {
+    content: '\2713';
+  }
+}
+
+.mod-index ul > li.isActivity, #sitemap_pop > .modal-body ul > li.isActivity, .mod-index ul > li.isQuiz, #sitemap_pop > .modal-body ul > li.isQuiz {
+  background: url(../../theme/base/ico_bundle_sitemap.png) no-repeat;
+  font-weight: 600;
+  height: 25px;
+}
+
+.mod-index ul > li.isActivity, #sitemap_pop > .modal-body ul > li.isActivity {
+  background-position: -0px -25px;
+}
+
+.mod-index ul > li.isQuiz, #sitemap_pop > .modal-body ul > li.isQuiz {
+  background-position: -0px -50px;
+}
+
+.mod-index ul > li > a, #sitemap_pop > .modal-body ul > li > a {
+  background-color: $sitemap-link-background-color;
+  height: inherit;
+  display: block;
+}

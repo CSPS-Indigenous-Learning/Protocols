@@ -1,0 +1,14 @@
+{
+  "name": "framework",
+  "version": "1.6.2",
+  "description": "Framework",
+  "main": "main.js",
+  "scripts": {
+    "build-css": "sass --update -f core/scss/:core/static/ theme/scss:theme/",
+    "watch-css": "sass --watch core/scss/:core/static/ theme/scss:theme/ common/scss/",
+    "sass-version": "sass --version"
+  },
+  "author": "CSPS",
+  "license": "ISC",
+  "devDependencies": {}
+}

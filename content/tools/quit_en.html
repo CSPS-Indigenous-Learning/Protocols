@@ -1,0 +1,24 @@
+<section id="quitPop" class="modal-dialog modal-content overlay-def mfp-with-anim">
+    <header class="modal-header">
+        <h2 class="modal-title">We want to hear your feedback!</h2>
+        <button title="Close overlay (escape key)" type="button" class="mfp-close">×<span class="wb-inv"> Close overlay (escape key)</span></button>
+    </header>
+    <div class="modal-body">
+		<div class="col-sm-2 feedback-quit">
+			<img src='content/medias/images/SurveyIcon_Icon.png' class="img-responsive" alt=''/>
+		</div>
+		<div class="col-sm-10">
+			<h3>We want to hear your feedback!</h3>
+			<p><a href="#" onclick="answer(); return false;">Tell us what you think about our product</a>. If you don't want to answer or have already completed the survey, you can also <a href="#" onclick="window.opener.quitCourse(); return false;">exit the course here</a>.</p>
+		</div>
+	</div>
+	
+	<script>
+
+		function answer(){
+			window.open("https://moodle.csps-efpc.gc.ca/moodle/mod/feedback/view.php?id=8974");
+			window.opener.quitCourse();
+		}
+
+	</script>
+</section>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+   <meta charset="utf-8" />
+   <title>Page de démarrage de la plateforme d'apprentissage EFPC</title>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800%7CPlayfair+Display:400,700%7CSource+Sans+Pro:400,700" rel="stylesheet">
+
+	<script src="./core/js/lib/require.js"></script> 
+   <script src="./core/js/scorm/APIWrapper.js" type="text/javascript"></script>
+   <script type="text/javascript">
+		require(['core/js/require-configs'], function() {
+			require(['jquery', 'json!settings-general', 'popper/popupwindowscripts'], function($, GeneralSettings, PopupWindowScripts) {
+				$(document).ready(function(e) {
+					// $("#coursename").html(GeneralSettings.courseTitle_fr);
+					// $("#subcoursename").html(GeneralSettings.courseSubtitle_fr);
+					checkLaunch('index_fr.html');
+				});
+			});
+		});
+   </script>
+   <style>
+    	html {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      
+      body {
+         /*background-color: #f7f7f7;*/
+         background-image: url('./theme/protocol/protocol_splash.png');
+         background-repeat: no-repeat;
+         background-position: -20% center;
+         background-size: 70%;
+         overflow: hidden;
+         font-family: 'Helvetica', sans-serif;
+      }
+      /* ------------------ SPLASH FUNCTIONAL --------------*/
+      
+      .obfuscated {
+         display: none;
+      }
+      /* ------------------ SPLASH ELEMENTS --------------*/
+      
+      #wordmark,
+      #canada-logo {
+         display: none;
+         position: fixed;
+         width: 98%;
+         padding-left: 1%;
+         padding-right: 1%;
+         background-color: #fff;
+      }
+      
+      #launch-placement a {
+         color: #3f4040;
+      }
+      #launch-placement a:hover {
+         color: #242424;
+      }
+      /*#launch-placement a:hover .arrow-right {
+      	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 45'%3E%3Cg fill='%23242424'%3E%3Cpath d='M2.8 4.1c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'/%3E%3Ccircle cx='2.8' cy='7.2' r='2'/%3E%3Ccircle cx='2.8' cy='12.3' r='2'/%3E%3Ccircle cx='2.8' cy='17.4' r='2'/%3E%3Cpath d='M2.8 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM2.8 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2-.9 1.9-2 1.9z'/%3E%3Ccircle cx='2.8' cy='32.7' r='2'/%3E%3Ccircle cx='2.8' cy='37.8' r='2'/%3E%3Cpath d='M2.8 44.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'/%3E%3Ccircle cx='7.9' cy='7.2' r='2'/%3E%3Ccircle cx='7.9' cy='12.3' r='2'/%3E%3Ccircle cx='7.9' cy='17.4' r='2'/%3E%3Cpath d='M7.9 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM7.9 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2-.9 1.9-2 1.9z'/%3E%3Ccircle cx='7.9' cy='32.7' r='2'/%3E%3Ccircle cx='7.9' cy='37.8' r='2'/%3E%3Cpath d='M13 14.3c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM13 19.4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM13 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM13 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2-.9 1.9-2 1.9zM13 34.6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c0 1.2-.9 2-2 2zM18.1 19.4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c-.1 1.1-.9 2-2 2zM18.1 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c-.1 1.1-.9 2-2 2zM18.1 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2c-.1 1.1-.9 1.9-2 1.9zM23.2 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c-.1 1.1-.9 2-2 2z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center;
+      }*/
+      #launch-placement .fadingbar {
+         /*border:1px solid black;*/
+         display:block;
+         margin-top:10px;
+         height:2px;
+         width:130%;
+         background: -moz-linear-gradient(left, rgba(128,17,17,1) 0%, rgba(128,17,17,1) 50%, rgba(128,17,17,0) 100%);
+         background: -webkit-linear-gradient(left, rgba(128,17,17,1) 0%,rgba(128,17,17,1) 50%,rgba(128,17,17,0) 100%);
+         background: linear-gradient(to right, rgba(128,17,17,1) 0%,rgba(128,17,17,1) 50%,rgba(128,17,17,0) 100%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#801111', endColorstr='#00801111',GradientType=1 );
+      }
+      #alt-launch-btn {
+         font-size:1.4em;
+         text-decoration:none;
+         padding:10px 40px 10px 10px;
+         position:absolute;
+         right:10%;
+         top:140px;
+         display:block;
+         color:#fff;
+         background-color:#801111;
+      }
+      #alt-launch-btn .mini-arrow {
+         position:absolute;
+         top:12px;
+         right:10px;
+         width: 0px;
+         height: 0px;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+         border-left: 20px solid #fff;
+      }
+      #splash-content {
+   		/*font-size: 2em;*/
+   		width: 44%;
+   		position: absolute;
+   		bottom: 42%;
+   		right: 0;
+   		float: left;
+         background-color:rgba(255,255,255,0.75);
+         padding:20px 150px 20px 20px;
+         background-image:url(./theme/protocol/Protocols_Title-icon_m1.png);
+         background-repeat: no-repeat;
+         background-position: 95% 40%;
+         background-size: 12%;
+      }
+
+      #splash-content h1 {
+      	line-height: 120%;
+         font-size:1.6em;
+      	float: left;
+      	margin: 0;
+         font-weight: bold;
+         color:#000;
+      }
+
+      .small-title {
+   		font-size: 0.8em;
+      }
+      .big-title {
+   		font-size: 1.5em;
+      }
+      
+      #manualpop {
+         visibility: hidden;
+         display: block;
+         width: 1px;
+         height: 1px;
+         overflow: hidden;
+      }
+      
+      #canada-logo {
+         bottom: 0px;
+         text-align: right;
+         margin-bottom: 0px;
+         padding-top: 10px;
+      }
+      
+      #splash-content:before {
+         background: none;
+         border: none;
+      }
+      
+      #wordmark {
+         height: 30px;
+      }
+
+      /*.arrow-right {
+      	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 45'%3E%3Cg fill='%233f4040'%3E%3Cpath d='M2.8 4.1c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'/%3E%3Ccircle cx='2.8' cy='7.2' r='2'/%3E%3Ccircle cx='2.8' cy='12.3' r='2'/%3E%3Ccircle cx='2.8' cy='17.4' r='2'/%3E%3Cpath d='M2.8 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM2.8 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2-.9 1.9-2 1.9z'/%3E%3Ccircle cx='2.8' cy='32.7' r='2'/%3E%3Ccircle cx='2.8' cy='37.8' r='2'/%3E%3Cpath d='M2.8 44.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'/%3E%3Ccircle cx='7.9' cy='7.2' r='2'/%3E%3Ccircle cx='7.9' cy='12.3' r='2'/%3E%3Ccircle cx='7.9' cy='17.4' r='2'/%3E%3Cpath d='M7.9 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM7.9 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2-.9 1.9-2 1.9z'/%3E%3Ccircle cx='7.9' cy='32.7' r='2'/%3E%3Ccircle cx='7.9' cy='37.8' r='2'/%3E%3Cpath d='M13 14.3c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM13 19.4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM13 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM13 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2-.9 1.9-2 1.9zM13 34.6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c0 1.2-.9 2-2 2zM18.1 19.4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c-.1 1.1-.9 2-2 2zM18.1 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c-.1 1.1-.9 2-2 2zM18.1 29.5c-1.1 0-2-.9-2-1.9 0-1.1.9-2 2-2s2 .9 2 2c-.1 1.1-.9 1.9-2 1.9zM23.2 24.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c-.1 1.1-.9 2-2 2z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center;
+   		width: 50px;
+   		height: 50px;
+   		display: inline-block;
+   		margin-left: 20px;
+      }*/
+      
+      @media (max-width: 1280px) {
+      	#alt-launch-btn {
+      		top:100%;
+      	}
+         #splash-content {
+            /*font-size: 1.5em;*/
+            /*bottom: 17.5%;*/
+            padding:20px;
+            background-image:none;
+         }
+         #splash-content h1 {
+            /*line-height: 50px;*/
+         }
+         /*#splash-content h1 .arrow-right {
+            width: 30px;
+            height: 30px;
+         }*/
+      }
+      @media (max-width: 992px) {
+         #splash-content {
+            /*font-size: 1em;*/
+            bottom: 36%;
+         }
+         #splash-content h1 {
+            line-height: 30px;
+         }
+         /*#splash-content h1 .arrow-right {
+            width: 30px;
+            height: 30px;
+         }*/
+      }
+      @media (max-width: 768px) {
+         body {
+            background-position: center top;
+            background-size:110%;
+         }
+         #splash-content {
+            /*font-size: 1em;*/
+            width:80%;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+         }
+         #splash-content h1 {
+            line-height: 30px;
+         }
+         #alt-launch-btn {
+            right:auto;
+            top:auto;
+            left:0px;
+            bottom:-25%;
+         }
+         /*#splash-content h1 .arrow-right {
+            width: 30px;
+            height: 30px;
+         }*/
+      }
+    </style> 
+</head>
+
+<body>
+	<span id="noclose" class="obfuscated">Ne pas fermer cette fenêtre. Si vous quittez, la session en cours sera fermée.</span>
+   <header id="wordmark"><img src="./WET/assets/CSPS_FIP_BlackRed_F.png" alt="Mot-symbole de l'École de la fonction publique" /></header>
+    <main id="splash-content">
+      <div id="launch-area">
+         <div id="launch-placement">
+            <span id="manualpop">Si le cours ne s'ouvre pas automatiquement, cliquez sur </span>
+            <a href="#" onclick="launchPop('index_fr.html')" id="launch-btn">
+					<h1 id="title-area">
+			         <span id="coursename">TRAVAILLER AVEC DES COLLECTIVITÉS AUTOCHTONES:<br>UN GUIDE SUR LE PROTOCOLE CULTUREL</span>
+			      	<!-- <span class="arrow-right"></span> -->
+					<br><span class="fadingbar"></span>
+			      </h1>
+            </a>
+         </div>
+      </div>
+        <a href="#" onclick="launchPop('index_fr.html')" id="alt-launch-btn">Démarrer <span class="mini-arrow"></span></a>
+   </main>
+    <footer id="canada-logo"><img src="./WET/assets/canada_flag.png" alt="Canada Logo" /></footer>
+</body>
+</html>

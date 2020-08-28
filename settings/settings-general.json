@@ -1,0 +1,30 @@
+﻿{
+   "courseLegacyCode":   "PROTOCOL",
+	"courseTitle_en": 	 "Working with indigenous communities a guide on cultural protocols",
+	"courseTitle_fr": 	 "Travailler avec des collectivités autochtones un guide sur le protocole culturel",
+	"courseSubtitle_en":  "",
+	"courseSubtitle_fr":  "",
+	"seriesTitle_en": 	 "Working with indigenous communities<br>a guide on cultural protocols",
+	"seriesTitle_fr": 	 "Travailler avec des collectivités autochtones<br>un guide sur le protocole culturel",
+
+	"showLangSwitch": true,
+	"showHome": 	   true,
+	"showHelp": 	   true,
+	"showSitemap":	   false,
+	"showToolbox": 	true,
+	"showFavorites":  false,
+	"showGlossary":   false,
+	"showResources":  true,
+	"showExit": 	   true,
+
+	"trackAllPages": true,
+	"triggerCompletionWhenAllPagesViewed": false,
+
+	"googleAnalyticsID": "UA-101907595-12",
+
+	"markModuleAsViewedOnLastPage": false,
+
+	"enableMicroLearning": true,
+
+	"enableTutorial": true
+}

@@ -1,0 +1,15 @@
+.exitSurveyIconContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    background: url(base/SurveyIcon_Icon.png) center center no-repeat, rgba(223, 213, 239, 0.7);
+    background-size: 70%;
+    border-radius: 50%;
+}
+.feedback-quit{
+	    padding: 20px;
+}

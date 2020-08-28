@@ -1,0 +1,2 @@
+FWversion=1.6.2
+WETversion=4.0.23
