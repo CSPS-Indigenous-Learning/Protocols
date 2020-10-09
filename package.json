@@ -6,7 +6,8 @@
   "scripts": {
     "build-css": "sass --update -f core/scss/:core/static/ theme/scss:theme/",
     "watch-css": "sass --watch core/scss/:core/static/ theme/scss:theme/ common/scss/",
-    "sass-version": "sass --version"
+    "sass-version": "sass --version",
+    "package": "tar --exclude=*.zip -acf protocols_%date%_en.zip * && powershell -Command \"(gc imsmanifest.xml) -replace '_en', '_fr' | Out-File -encoding ASCII imsmanifest.xml\" && tar --exclude=*.zip -acf protocols_%date%_fr.zip * && echo packages created!"
   },
   "author": "CSPS",
   "license": "ISC",
